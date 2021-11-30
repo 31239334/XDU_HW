@@ -1,0 +1,16 @@
+Fitter Status : Successful - Thu Nov 05 16:11:41 2020
+Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
+Revision Name : TrafficLight
+Top-level Entity Name : TrafficLight
+Family : Cyclone III
+Device : EP3C16F484C6
+Timing Models : Final
+Total logic elements : 186 / 15,408 ( 1 % )
+    Total combinational functions : 184 / 15,408 ( 1 % )
+    Dedicated logic registers : 43 / 15,408 ( < 1 % )
+Total registers : 43
+Total pins : 37 / 347 ( 11 % )
+Total virtual pins : 0
+Total memory bits : 0 / 516,096 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 112 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )

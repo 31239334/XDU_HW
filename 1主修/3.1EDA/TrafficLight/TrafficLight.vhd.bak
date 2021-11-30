@@ -1,0 +1,37 @@
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.all;
+USE IEEE.std_logic_arith.all;
+USE IEEE.std_logic_unsigned.all;
+
+entity TrafficLight is
+	generic(
+		sys_clk_val:INTEGER:=50000000;
+		div_clk_val:INTEGER:=1
+	);
+	port(
+		i_sys_clk:in std_logic;
+		i_sys_rst:in std_logic;
+		o_div_clk:in std_logic
+	);
+end entity div_clk_50M;
+
+architecture behavior of TrafficLight is
+	signal r_div_count:std_logic_vector(31 downto 0);
+	signal r_div_clk:std_logic;
+	begin
+	process(i_sys_rst,i_sys_clk)
+		begin
+			if(i_sys_rst='1')then
+				r_div_count<=x"00000000";
+				r_div_clk<=x'0';
+			elsif(i_sys_clk'event AND i_sys_clk='1')then
+				if(r_div_count=sys_clk_val/div_clk_val/2-1)then
+					r_div_count<=x"00000000";
+					r_div_clk<=NOT r_div_clk;
+				else
+					r_div_count<=r_div_count+1;
+				end if;
+			end if;
+	end process;
+	o_div_clk<=r_div_clk;
+end architecture behavior;
